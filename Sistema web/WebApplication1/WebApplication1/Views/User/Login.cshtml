@@ -1,0 +1,199 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP DESK - Login</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="~/css/Login.css">
+   
+    <style>
+        /* =========================
+                   Estilo do Checkbox LGPD - Visto
+                ========================= */
+        .lgpd-group {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            font-size: 0.95rem;
+            color: #333;
+            cursor: pointer;
+            user-select: none;
+        }
+
+            .lgpd-group input[type="checkbox"] {
+                /* Oculta o checkbox original */
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+                height: 0;
+                width: 0;
+            }
+
+            .lgpd-group label {
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                position: relative;
+            }
+
+                /* Caixa azul vazia */
+                .lgpd-group label::before {
+                    content: "";
+                    display: inline-block;
+                    width: 24px;
+                    height: 24px;
+                    border: 2px solid #007bff;
+                    border-radius: 5px;
+                    margin-right: 10px;
+                    background-color: #fff;
+                    flex-shrink: 0;
+                    transition: all 0.3s ease;
+                    position: relative;
+                }
+
+                /* Visto quando marcado */
+                .lgpd-group label::after {
+                    content: "✔"; /* símbolo de visto */
+                    font-size: 16px;
+                    color: #fff;
+                    position: absolute;
+                    left: 4px;
+                    top: 0px;
+                    transform: scale(0);
+                    transition: transform 0.2s ease-in-out;
+                }
+
+            /* Mostra visto quando marcado */
+            .lgpd-group input:checked + label::after {
+                transform: scale(1);
+            }
+
+            /* Fundo azul quando marcado */
+            .lgpd-group input:checked + label::before {
+                background-color: #007bff;
+                border-color: #007bff;
+            }
+
+            /* Hover */
+            .lgpd-group label:hover::before {
+                box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+            }
+
+        /* Mensagem de erro específica para LGPD */
+        #lgpd-error {
+            color: red;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="~/imagem/Logo.png" alt="Logo Help Desk" class="logo">
+
+        <!-- Títulos -->
+        <h1 class="welcome-title">Bem-vindo</h1>
+        <h2 class="login-subtitle">Faça login na sua conta</h2>
+
+        <!-- Mensagem de erro -->
+        <div id="error-message" class="error-message" style="display:none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="error-text"></span>
+        </div>
+
+        <!-- Mensagem de sucesso -->
+        <div id="success-message" class="error-message"
+             style="display:none; border-left-color: green; background: #e6f4ea; color: #2e7d32;">
+            <i class="fas fa-check-circle"></i>
+            <span id="success-text"></span>
+        </div>
+
+        <!-- Formulário -->
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="nome@helpdesk.com" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Sua senha" required />
+                </div>
+            </div>
+
+            <!-- ✅ Checkbox LGPD -->
+            <div class="form-group lgpd-group">
+                <input type="checkbox" id="lgpd" name="lgpd" />
+                <label for="lgpd">
+                    Autorizo o uso dos meus dados apenas para registro e gerenciamento de tickets.
+                </label>
+            </div>
+            <div id="lgpd-error">Você deve autorizar o uso dos dados para continuar.</div>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#loginForm').submit(function (e) {
+                e.preventDefault();
+
+                // ✅ Verifica se o checkbox LGPD foi marcado
+                if (!$('#lgpd').is(':checked')) {
+                    $('#lgpd-error').fadeIn();
+                    $('#error-message').fadeOut();
+                    $('#success-message').fadeOut();
+                    return;
+                } else {
+                    $('#lgpd-error').fadeOut();
+                }
+
+                const email = $('#email').val();
+                const password = $('#password').val();
+
+                $.ajax({
+                    url: '/User/LoginAjax',
+                    type: 'POST',
+                    data: { email: email, password: password },
+                    success: function (response) {
+                        if (response.success) {
+                            // Mostra mensagem de sucesso com o nome do usuário
+                            $('#success-text').text(response.message);
+                            $('#success-message').fadeIn();
+                            $('#error-message').fadeOut();
+
+                            // Redireciona após 1s
+                            setTimeout(function () {
+                                window.location.href = response.redirectUrl;
+                            }, 1000);
+                        } else {
+                            // Mostra mensagem de erro
+                            $('#error-text').text(response.message);
+                            $('#error-message').fadeIn();
+                            $('#success-message').fadeOut();
+                        }
+                    },
+                    error: function () {
+                        $('#error-text').text('Ocorreu um erro. Tente novamente.');
+                        $('#error-message').fadeIn();
+                        $('#success-message').fadeOut();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

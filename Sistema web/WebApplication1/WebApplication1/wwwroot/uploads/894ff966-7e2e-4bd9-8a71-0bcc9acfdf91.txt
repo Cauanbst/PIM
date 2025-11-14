@@ -1,0 +1,319 @@
+@model WebApplication1.Models.Ticket
+
+@{
+    Layout = null;
+
+    var tecnico = Model.Tecnico?.Nome ?? "Aguardando técnico";
+    var tecnicoInicial = tecnico.Trim().Substring(0, 1).ToUpper();
+    string clienteNome = Model.Criador?.Username ?? "Cliente";
+    var usuarioLogado = ViewBag.UsuarioLogado ?? clienteNome;
+    var ticketId = Model.Id;
+    var titulo = Model.Title ?? "Chat";
+    var status = Model.Status ?? "Aberto";
+    bool modoLeitura = ViewBag.ModoLeitura ?? false;
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <title>Chat - @titulo</title>
+    <link rel="stylesheet" href="~/css/chat.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+            .overlay.show {
+                opacity: 1;
+            }
+
+        .popup {
+            background: #fff;
+            padding: 30px;
+            border-radius: 18px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 330px;
+            transform: scale(0.9);
+            transition: all 0.3s ease;
+        }
+
+        .overlay.show .popup {
+            transform: scale(1);
+        }
+
+        .popup h3 {
+            margin: 0;
+            color: #222;
+            font-size: 20px;
+        }
+
+        .popup p {
+            color: #555;
+            margin: 10px 0 20px;
+        }
+
+        .popup .contador {
+            font-weight: bold;
+            color: #007bff;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .popup button {
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 0 5px;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+            .popup button:hover {
+                transform: scale(1.05);
+            }
+
+        .confirmar-btn {
+            background: #28a745;
+        }
+
+        .cancelar-btn {
+            background: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chat-fullscreen">
+        <div class="chat-header">
+            <div class="tech-icon">@tecnicoInicial</div>
+            <div class="tech-name">@tecnico</div>
+        </div>
+
+        <div class="chat-messages" id="mensagens" style="position: relative; overflow-y: auto;">
+            <img src="@Url.Content("~/imagem/Logo.png")"
+                 alt="Logo"
+                 id="logoChat"
+                 style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+                        width:220px;height:auto;opacity:0.3;z-index:0;pointer-events:none;object-fit:contain;">
+        </div>
+
+        @if (!modoLeitura && status != "Fechado")
+        {
+            <div class="chat-input">
+                <textarea id="mensagemInput" placeholder="Digite sua mensagem..."></textarea>
+                <label for="arquivoInput" class="attach-btn" style="cursor:pointer; font-size:18px; margin-right:5px;">
+                    <i class="fas fa-paperclip"></i>
+                </label>
+                <input type="file" id="arquivoInput" accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.txt" style="display:none" />
+                <button id="enviarBtn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        }
+        else
+        {
+            <div class="chat-info-bar">
+                <p style="text-align:center; color:#666; margin:10px 0;">
+                    🔒 Este chat está em modo visualização (não é possível enviar mensagens).
+                </p>
+            </div>
+        }
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mensagens = document.getElementById("mensagens");
+            const textarea = document.getElementById("mensagemInput");
+            const botao = document.getElementById("enviarBtn");
+            const arquivoInput = document.getElementById("arquivoInput");
+
+            const ticketId = @ticketId;
+            const usuario = "@usuarioLogado";
+            const tecnico = "@tecnico";
+            const cliente = "@clienteNome";
+            const papel = "cliente";
+            const mensagensRenderizadas = new Set();
+
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chatHub")
+                .withAutomaticReconnect()
+                .build();
+
+            async function conectar() {
+                try {
+                    await connection.start();
+                    await connection.invoke("EntrarNoTicket", ticketId);
+                    carregarMensagens();
+                } catch {
+                    setTimeout(conectar, 3000);
+                }
+            }
+
+            conectar();
+
+            function criarMensagemHTML(mensagem, lado, hora) {
+                const msgDiv = document.createElement("div");
+                msgDiv.classList.add("message", lado);
+                msgDiv.style.position = "relative";
+                msgDiv.style.zIndex = "1";
+
+                if (mensagem.startsWith("file:")) {
+                    const fileUrl = mensagem.replace("file:", "");
+                    const ext = fileUrl.split('.').pop().toLowerCase();
+                    let conteudo = "";
+
+                    if (["jpg", "jpeg", "png", "gif"].includes(ext)) {
+                        conteudo = `<img src="${fileUrl}" alt="arquivo" style="max-width:200px; border-radius:8px;">`;
+                    } else {
+                        const nomeArquivo = fileUrl.split('/').pop();
+                        const corLink = lado === "sent" ? "white" : "#007bff";
+                        conteudo = `<a href="${fileUrl}" target="_blank" style="color:${corLink}; text-decoration:none;">
+                                        <i class="fas fa-file"></i> ${nomeArquivo}
+                                    </a>`;
+                    }
+                    msgDiv.innerHTML = `<div class="msg-texto">${conteudo}</div>`;
+                } else {
+                    msgDiv.innerHTML = `<div class="msg-texto">${mensagem}</div>`;
+                }
+
+                const horaDiv = document.createElement("div");
+                horaDiv.classList.add("msg-hora");
+                horaDiv.textContent = new Date(hora).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                horaDiv.style.fontSize = "11px";
+                horaDiv.style.marginTop = "2px";
+                horaDiv.style.color = "#888";
+                horaDiv.style.textAlign = lado === "sent" ? "right" : "left";
+
+                mensagens.appendChild(msgDiv);
+                mensagens.appendChild(horaDiv);
+                mensagens.scrollTop = mensagens.scrollHeight;
+            }
+
+            async function carregarMensagens() {
+                const res = await fetch(`/Chat/CarregarMensagens?ticketId=${ticketId}`);
+                const lista = await res.json();
+
+                mensagens.querySelectorAll(".message, .msg-hora").forEach(el => el.remove());
+                lista.forEach(msg => {
+                    const msgId = `${msg.mensagem.trim()}_${msg.dataEnvio}`;
+                    if (mensagensRenderizadas.has(msgId)) return;
+                    mensagensRenderizadas.add(msgId);
+
+                    const lado = msg.papel === papel ? "sent" : "received";
+                    criarMensagemHTML(msg.mensagem, lado, msg.dataEnvio);
+                });
+            }
+
+            connection.on("ReceberMensagem", (dados) => {
+                const { mensagem, papel: papelRemetente, data } = dados;
+                if (!mensagem || mensagem.trim() === "") return;
+
+                const hora = data || new Date().toISOString();
+                const msgId = `${mensagem.trim()}_${hora}`;
+                if (mensagensRenderizadas.has(msgId)) return;
+                mensagensRenderizadas.add(msgId);
+
+                const lado = papelRemetente === papel ? "sent" : "received";
+                criarMensagemHTML(mensagem, lado, hora);
+            });
+
+            // =============== UPLOAD DE ARQUIVO ===============
+            arquivoInput?.addEventListener("change", async () => {
+                const arquivo = arquivoInput.files[0];
+                if (!arquivo) return;
+
+                const formData = new FormData();
+                formData.append("file", arquivo);
+                formData.append("ticketId", ticketId);
+                formData.append("usuario", usuario);
+
+                try {
+                    const response = await fetch("/Upload/Create", {
+                        method: "POST",
+                        body: formData
+                    });
+                    const result = await response.json();
+                    if (result.success && result.fileUrl) {
+                        const mensagemArquivo = `file:${result.fileUrl}`;
+                        await connection.invoke("EnviarMensagem", ticketId, usuario, mensagemArquivo, papel);
+                    } else {
+                        alert(result.error || "Erro ao enviar arquivo.");
+                    }
+                } catch (err) {
+                    console.error("Erro upload:", err);
+                }
+                arquivoInput.value = "";
+            });
+
+            // =============== ENCERRAMENTO ===============
+            connection.on("ChatEncerradoPeloTecnico", async () => {
+                if (document.getElementById("overlayEncerrar")) return;
+
+                const overlay = document.createElement("div");
+                overlay.className = "overlay";
+                overlay.id = "overlayEncerrar";
+
+                overlay.innerHTML = `
+                    <div class="popup">
+                        <h3>Encerrar chamado?</h3>
+                        <p>O técnico solicitou o encerramento.</p>
+                        <div class="contador" id="contadorEncerrar">10</div>
+                        <div>
+                            <button class="confirmar-btn" id="confirmarEncerrarBtn">Confirmar</button>
+                            <button class="cancelar-btn" id="cancelarEncerrarBtn">Cancelar</button>
+                        </div>
+                    </div>
+                `;
+
+                document.body.appendChild(overlay);
+                setTimeout(() => overlay.classList.add("show"), 50);
+
+                let tempo = 10;
+                const contadorSpan = document.getElementById("contadorEncerrar");
+                const timer = setInterval(() => {
+                    tempo--;
+                    contadorSpan.textContent = tempo;
+                    if (tempo <= 0) {
+                        clearInterval(timer);
+                        confirmarEncerramento();
+                    }
+                }, 1000);
+
+                document.getElementById("confirmarEncerrarBtn").onclick = async () => {
+                    clearInterval(timer);
+                    confirmarEncerramento();
+                };
+
+                document.getElementById("cancelarEncerrarBtn").onclick = () => {
+                    clearInterval(timer);
+                    overlay.style.opacity = "0";
+                    setTimeout(() => overlay.remove(), 400);
+                };
+
+                async function confirmarEncerramento() {
+                    overlay.style.opacity = "0";
+                    setTimeout(() => overlay.remove(), 400);
+
+                    // ✅ Corrigido: chama o método certo no Hub
+                    await connection.invoke("ClienteConfirmouEncerrar", ticketId);
+
+                    alert("Chamado encerrado com sucesso!");
+                    window.location.href = "/User/Login";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

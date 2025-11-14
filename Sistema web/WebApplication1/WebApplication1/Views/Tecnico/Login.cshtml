@@ -1,0 +1,113 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP DESK - Login Técnico</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="~/images/android-chrome-512x512.png">
+    <!-- Seu CSS -->
+    <link rel="stylesheet" href="~/css/Login.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="~/imagem/Logo.png" alt="Logo Help Desk" class="logo">
+
+        <!-- Títulos -->
+        <h1 class="welcome-title">Bem-vindo</h1>
+        <h2 class="login-subtitle">Faça login na sua conta</h2>
+        <!-- Mensagem de erro -->
+        <div id="error-message" class="error-message" style="display:none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="error-text"></span>
+        </div>
+
+        <!-- Mensagem de sucesso -->
+        <div id="success-message" class="error-message" style="display:none; border-left-color: green; background: #e6f4ea; color: #2e7d32;">
+            <i class="fas fa-check-circle"></i>
+            <span id="success-text"></span>
+        </div>
+
+        <!-- Formulário -->
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" placeholder="nome@helpdesk.com" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Senha</label>
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Sua senha" required />
+
+                </div>
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Toggle senha
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const eyeIcon = document.getElementById('eye-icon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+
+        // Login via AJAX
+        $(document).ready(function () {
+            $('#loginForm').submit(function (e) {
+                e.preventDefault(); // Evita recarregar a página
+
+                const email = $('#email').val();
+                const password = $('#password').val();
+
+                $.ajax({
+                    url: '/Tecnico/LoginAjax', // Controller Tecnico, Action LoginAjax
+                    type: 'POST',
+                    data: { email: email, password: password },
+                    success: function (response) {
+                        if (response.success) {
+                            // Mostra mensagem de sucesso
+                            $('#success-text').text(response.message);
+                            $('#success-message').fadeIn();
+                            $('#error-message').fadeOut();
+
+                            // Redireciona para a página de suporte
+                            setTimeout(function () {
+                                window.location.href = response.redirectUrl;
+                            }, 1000);
+                        } else {
+                            // Mostra mensagem de erro dinamicamente
+                            $('#error-text').text(response.message);
+                            $('#error-message').fadeIn();
+                            $('#success-message').fadeOut();
+                        }
+                    },
+                    error: function () {
+                        $('#error-text').text('Ocorreu um erro. Tente novamente.');
+                        $('#error-message').fadeIn();
+                        $('#success-message').fadeOut();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+﻿/* === Reset e fonte padrão === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Fundo === */
+body {
+    background: linear-gradient(135deg, #256d85 0%, #1e3a8a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* === Formulário === */
+.ticket-form {
+    position: relative;
+    padding-top: 80px;
+    background: linear-gradient(to bottom right, #ffffff, #f0f9ff);
+    border-radius: 32px;
+    padding: 60px 80px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    border: 1px solid #dbeafe;
+    margin: 20px; /* garante que o fundo azul do body apareça */
+    font-family: 'Segoe UI', sans-serif; /* força a fonte em todo o formulário */
+}
+
+/* === Título com ícone === */
+.title-with-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    font-size: 34px;
+    font-weight: bold;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+}
+
+    .title-with-icon i {
+        font-size: 38px;
+        color: #2563eb;
+    }
+
+/* === Campos === */
+.form-group {
+    margin-bottom: 40px;
+}
+
+label {
+    font-weight: 600;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 16px 18px;
+    border-radius: 12px;
+    border: 2px solid #dbeafe;
+    font-size: 16px;
+    font-family: 'Segoe UI', sans-serif; /* garante mesma fonte nos inputs */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+/* === Botão === */
+#btnEnviar {
+    width: 100%;
+    background: linear-gradient(135deg,#2563eb,#1e3a8a);
+    color: #fff;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Segoe UI', sans-serif; /* mesmo tipo de letra */
+}
+
+/* === Loading === */
+#loading {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+    color: #2563eb;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* === Alertas === */
+.alert {
+    display: none;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.alert-error {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.alert-success {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+/* === Responsividade === */
+@media (max-width: 768px) {
+    .ticket-form {
+        padding: 40px 30px;
+    }
+
+    .title-with-icon {
+        font-size: 28px;
+    }
+
+        .title-with-icon i {
+            font-size: 32px;
+        }
+
+    label {
+        font-size: 15px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+        padding: 12px 14px;
+    }
+
+    #btnEnviar {
+        font-size: 16px;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ticket-form {
+        padding: 30px 20px;
+    }
+
+    .title-with-icon {
+        font-size: 24px;
+    }
+
+        .title-with-icon i {
+            font-size: 28px;
+        }
+
+    input, textarea {
+        font-size: 13px;
+        padding: 10px 12px;
+    }
+
+    #btnEnviar {
+        width: 100%;
+        background: linear-gradient(135deg,#2563eb,#1e3a8a);
+        color: #fff;
+        padding: 18px;
+        border: none;
+        border-radius: 14px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+    }
+
+   
+
+   
+
+
+}
+
+
+
+        #btnEnviar:hover {
+            background: linear-gradient(135deg,#1f4ebd,#162f6b); /* versão mais escura do gradiente */
+            transform: translateY(-2px);
+        }
+
+/* === Logo Responsiva no Canto === */
+.logo-canto {
+    position: absolute;
+    top: -40px;
+    left: -35px;
+    width: 155px;
+    height: auto;
+    display: block;
+    z-index: 10;
+    object-fit: contain;
+    filter: drop-shadow(0 0 3px rgba(0,0,0,0.2));
+    transition: all 0.3s ease;
+}
+
+/* Ajuste automático para telas médias */
+@media (max-width: 768px) {
+    .logo-canto {
+        top: -40px;
+        left: -25px;
+        width: 140px;
+    }
+}
+
+/* Ajuste para celulares */
+@media (max-width: 480px) {
+    .logo-canto {
+        top: -30px;
+        left: -15px;
+        width: 100px;
+    }
+}
+
+
+
+
+/* === Botões unificados === */
+/* === Botão Meus Chamados === */
+#btn-meus-chamados {
+    width: 100%;
+    background: linear-gradient(135deg,#2563eb,#1e3a8a);
+    color: #fff;
+    padding: 18px;
+    border: none;
+    border-radius: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Segoe UI', sans-serif;
+    transition: all 0.3s ease;
+    margin-top: 20px; /* espaço entre os botões */
+}
+
+    #btn-meus-chamados:hover {
+        background: linear-gradient(135deg,#1f4ebd,#162f6b);
+        transform: translateY(-2px);
+    }

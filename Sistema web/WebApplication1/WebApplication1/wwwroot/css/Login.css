@@ -1,0 +1,287 @@
+﻿/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Estilos do corpo - GRADIENTE AZUL */
+body {
+    background: linear-gradient(135deg, #256d85 0%, #1e3a8a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container principal do login */
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 50px 30px 50px; /* Reduzi o padding superior para 20px */
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 900px;
+    min-height: auto;
+    text-align: center;
+}
+
+/* Logo - Margem inferior reduzida */
+.logo {
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto 12px; /* Reduzi de 20px para 12px */
+    display: block;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Nome do sistema - Margem inferior reduzida */
+.system-name {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 4px; /* Reduzi de 8px para 4px */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Título de boas-vindas - Margem inferior reduzida */
+.welcome-title {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 4px; /* Reduzi de 8px para 4px */
+    font-weight: 600;
+}
+
+/* Subtítulo do login - Margem inferior reduzida */
+.login-subtitle {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    margin-bottom: 18px; /* Reduzi de 25px para 18px */
+    font-weight: 400;
+}
+
+/* Mensagem de erro */
+.error-message {
+    background: #fdecea; /* fundo vermelho claro */
+    color: #c62828; /* texto vermelho escuro */
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d32f2f; /* borda vermelha intensa */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+
+/* Grupos do formulário */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #34495e;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+/* Campos de entrada */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e1e1e1;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2196f3;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Container de senha com ícone */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #7f8c8d;
+    font-size: 18px;
+}
+
+/* Botão de submit - AZUL */
+button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+    button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+        background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+    }
+
+/* Links do rodapé */
+.footer-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+    .footer-links a {
+        color: #2196f3;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+        .footer-links a:hover {
+            color: #1976d2;
+            text-decoration: underline;
+        }
+
+/* Layout para telas muito largas */
+@media (min-width: 1200px) {
+    .login-container {
+        max-width: 950px;
+        padding: 15px 60px 25px 60px; /* Padding superior reduzido para 15px */
+    }
+
+    .logo {
+        max-width: 320px;
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 950px) {
+    .login-container {
+        padding: 15px 40px 25px 40px; /* Padding superior reduzido para 15px */
+        max-width: 95%;
+    }
+
+    .logo {
+        max-width: 250px;
+        margin: 0 auto 10px; /* Margem inferior reduzida para telas menores */
+    }
+
+    .system-name {
+        font-size: 2rem;
+        margin-bottom: 3px; /* Margem inferior reduzida para telas menores */
+    }
+
+    .welcome-title {
+        font-size: 1.6rem;
+        margin-bottom: 3px; /* Margem inferior reduzida para telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 12px 30px 20px 30px; /* Padding superior reduzido para 12px */
+    }
+
+    .logo {
+        max-width: 220px;
+        margin: 0 auto 8px; /* Margem inferior reduzida para mobile */
+    }
+
+    .system-name {
+        font-size: 1.8rem;
+        margin-bottom: 2px; /* Margem inferior reduzida para mobile */
+    }
+
+    .welcome-title {
+        font-size: 1.5rem;
+        margin-bottom: 2px; /* Margem inferior reduzida para mobile */
+    }
+
+    .login-subtitle {
+        margin-bottom: 15px; /* Margem inferior reduzida para mobile */
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 10px 20px 15px 20px; /* Padding superior reduzido para 10px */
+    }
+
+    .logo {
+        max-width: 200px;
+        margin: 0 auto 6px; /* Margem inferior ainda mais reduzida */
+    }
+
+    .system-name {
+        font-size: 1.6rem;
+        margin-bottom: 1px; /* Margem inferior ainda mais reduzida */
+    }
+
+    .welcome-title {
+        font-size: 1.3rem;
+        margin-bottom: 1px; /* Margem inferior ainda mais reduzida */
+    }
+
+    .login-subtitle {
+        margin-bottom: 12px; /* Margem inferior ainda mais reduzida */
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    button {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    animation: fadeIn 0.6s ease-out;
+}

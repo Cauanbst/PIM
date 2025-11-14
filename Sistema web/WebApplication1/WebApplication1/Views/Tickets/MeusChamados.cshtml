@@ -1,0 +1,174 @@
+﻿@model List<WebApplication1.Models.Ticket>
+@{
+    Layout = null;
+
+    // Nome do usuário logado (passado pelo ViewBag)
+    var usuario = ViewBag.Usuario ?? "Cliente";
+
+    // Contagem de tickets por status
+    var abertos = Model.Count(t => t.Status == "Aberto");
+    var andamento = Model.Count(t => t.Status == "Em Andamento");
+    var finalizados = Model.Count(t => t.Status == "Finalizado");
+}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <title>Meus Chamados</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="~/css/meus-chamados.css" />
+</head>
+<body>
+
+    <!-- ===============================
+         Painel principal de chamados
+         =============================== -->
+    <main class="painel-chamados">
+        <header class="cabecalho">
+            <h1>Meus Chamados</h1>
+            <p>Acompanhe o status e histórico dos seus tickets de suporte</p>
+        </header>
+
+        <!-- Botão de voltar para criar novo ticket -->
+        <div class="voltar-novo-ticket">
+            <a href="/Tickets/Novo" class="btn-voltar">← Voltar para Novo Ticket</a>
+        </div>
+
+        <!-- Logo da empresa -->
+        <img src="/imagem/Logo.png" alt="Logo SuporteTech" class="logo-canto">
+
+        <!-- ===============================
+             Contadores de status
+             =============================== -->
+        <section class="resumo">
+            <div class="card-resumo aberto">
+                <h3>Aberto</h3>
+                <span class="numero">@abertos</span>
+            </div>
+            <div class="card-resumo andamento">
+                <h3>Em Andamento</h3>
+                <span class="numero">@andamento</span>
+            </div>
+            <div class="card-resumo finalizado">
+                <h3>Finalizado</h3>
+                <span class="numero">@finalizados</span>
+            </div>
+        </section>
+
+        <!-- Botão de ações (ordenar) -->
+        <div class="acoes">
+            <button class="botao">Ordenar</button>
+        </div>
+
+        <!-- ===============================
+             Lista de chamados
+             =============================== -->
+        <section class="lista-chamados">
+            <h2>Todos os Chamados</h2>
+
+            @* Se não houver tickets *@
+            @if (!Model.Any())
+            {
+                <p class="nenhum">Você ainda não possui chamados.</p>
+            }
+            else
+            {
+                @foreach (var ticket in Model)
+                {
+                    <div class="chamado-card">
+                        <!-- Cabeçalho com ID e Status -->
+                        <div class="chamado-header">
+                            <span class="id">#@ticket.Id</span>
+
+                            @if (ticket.Status == "Aberto")
+                            {
+                                <span class="status aberto">@ticket.Status</span>
+                            }
+                            else if (ticket.Status == "Em Andamento")
+                            {
+                                <span class="status andamento">@ticket.Status</span>
+                            }
+                            else if (ticket.Status == "Finalizado")
+                            {
+                                <span class="status finalizado">@ticket.Status</span>
+                            }
+                            else
+                            {
+                                <span class="status desconhecido">Desconhecido</span>
+                            }
+                        </div>
+
+                        <!-- Título e descrição do ticket -->
+                        <h3 class="titulo">@ticket.Title</h3>
+                        <p class="descricao">@ticket.Description</p>
+
+                        <!-- Rodapé com informações do técnico -->
+                        <div class="chamado-footer">
+                            <span>👷 Técnico: @(ticket.Tecnico?.Nome ?? "Sem técnico atribuído")</span>
+
+                            @* =========================
+                               Botões dinâmicos por status
+                               ========================= *@
+
+                            @* Botão para reabrir tickets em andamento (mesma página) *@
+                            @if (ticket.Status == "Em Andamento")
+                            {
+                                <a href="/Chat/ChatCliente?ticketId=@ticket.Id&tecnico=@System.Net.WebUtility.UrlEncode(ticket.Tecnico?.Nome)"
+                                   class="botao-reabrir">
+                                    💬 Reabrir Ticket
+                                </a>
+                            }
+
+
+                            @* Botão para visualizar conversa em tickets fechados *@
+                            @if (ticket.Status == "Finalizado")
+                            {
+                                <a href="/Chat/ChatCliente?ticketId=@ticket.Id&tecnico=@System.Net.WebUtility.UrlEncode(ticket.Tecnico?.Nome)"
+                                   class="botao-visualizar" target="_blank">
+                                    👁️ Visualizar Conversa
+                                </a>
+                            }
+                        </div>
+
+                        <!-- Data de criação do ticket -->
+                        <div class="data-criacao">
+                            <span>📅 Criado em: @ticket.DataCriacao.ToString("dd/MM/yyyy HH:mm")</span>
+                        </div>
+                    </div>
+                }
+            }
+        </section>
+    </main>
+
+    <!-- ===============================
+         Script para ordenação de tickets
+         =============================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const btnOrdenar = document.querySelector(".acoes .botao");
+            const lista = document.querySelector(".lista-chamados");
+
+            if (!btnOrdenar || !lista) return;
+
+            btnOrdenar.addEventListener("click", function () {
+                const cards = Array.from(lista.querySelectorAll(".chamado-card"));
+
+                // Ordem personalizada por status
+                const ordem = { "Aberto": 1, "Em Andamento": 2, "Fechado": 3, "Desconhecido": 4 };
+
+                cards.sort((a, b) => {
+                    const statusA = a.querySelector(".status")?.textContent.trim() || "Desconhecido";
+                    const statusB = b.querySelector(".status")?.textContent.trim() || "Desconhecido";
+                    return (ordem[statusA] || 99) - (ordem[statusB] || 99);
+                });
+
+                // Reaplica a ordem no DOM
+                cards.forEach(card => lista.appendChild(card));
+            });
+        });
+    </script>
+
+</body>
+</html>

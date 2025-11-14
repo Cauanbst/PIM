@@ -1,0 +1,338 @@
+﻿/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Container principal - TELA INTEIRA */
+.chat-fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Cabeçalho fixo no topo */
+.chat-header {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+/* Ícone do técnico - inicial */
+.client-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Nome do técnico ao lado do ícone */
+.client-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333333;
+}
+
+/* Área de mensagens - ocupa todo o espaço disponível */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+    /* Remove o texto "Inicie a conversa..." */
+    .chat-messages em {
+        display: none;
+    }
+
+/* Área de input fixa na parte inferior - REDUZIDA */
+.chat-input {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+    border-top: 3px solid #e0e0e0;
+    min-height: 60px;
+}
+
+    /* Campo de texto - REDUZIDO */
+    .chat-input textarea {
+        flex: 1;
+        border: 3px solid #ddd;
+        border-radius: 20px;
+        padding: 10px 15px;
+        font-size: 14px;
+        resize: none;
+        outline: none;
+        max-height: 80px;
+        min-height: 40px;
+        line-height: 1.4;
+        background-color: white;
+        transition: border-color 0.2s;
+    }
+
+        .chat-input textarea:focus {
+            border-color: #007bff;
+        }
+
+        .chat-input textarea::placeholder {
+            color: #999;
+        }
+
+    /* Botão de enviar com ícone */
+    .chat-input button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+
+/* Barra de rolagem personalizada */
+.chat-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+    .chat-messages::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.3);
+    }
+.chat-messages {
+    position: relative;
+    z-index: 1;
+}
+.chat-imagem {
+    max-width: 250px;
+    border-radius: 10px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* Estilos para mensagens */
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+    .message.received {
+        align-self: flex-start;
+        background-color: #e0e0e0;
+        border-bottom-left-radius: 5px;
+        color: black;
+    }
+
+    .message.sent {
+        align-self: flex-end;
+        background-color: #007bff;
+        color: white;
+        border-bottom-right-radius: 5px;
+    }
+
+.message-time {
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 5px;
+    text-align: right;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .chat-header {
+        padding: 12px 15px;
+    }
+
+    .chat-messages {
+        padding: 15px;
+    }
+
+    .chat-input {
+        padding: 8px 12px;
+        min-height: 55px;
+    }
+
+        .chat-input textarea {
+            padding: 8px 12px;
+            min-height: 35px;
+        }
+
+    .message {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-header {
+        padding: 10px 12px;
+    }
+
+    .client-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .client-name {
+        font-size: 15px;
+    }
+
+    .chat-messages {
+        padding: 10px;
+    }
+
+    .chat-input {
+        padding: 6px 10px;
+        min-height: 50px;
+    }
+
+        .chat-input textarea {
+            padding: 6px 12px;
+            font-size: 14px;
+            min-height: 35px;
+        }
+
+        .chat-input button {
+            width: 35px;
+            height: 35px;
+            font-size: 14px;
+        }
+
+    .message {
+        max-width: 90%;
+    }
+}
+
+/* Ícone de anexar arquivos */
+.attach-btn {
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .attach-btn:hover {
+        color: #007bff;
+    }
+
+/* Input de arquivo escondido */
+#arquivoInput {
+    display: none;
+}
+
+/* Estilos para mensagens com arquivos/imagens */
+.message img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    display: block;
+    margin-top: 6px;
+}
+
+.msg-hora {
+    font-size: 10px;
+    color: #999;
+    margin-top: 2px;
+    margin-bottom: 6px;
+    padding: 0 6px;
+}
+
+
+.file-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    text-decoration: none;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.message.received .file-link {
+    color: blue;
+}
+
+.finalizar-chat-btn {
+    margin-left: auto;
+    padding: 8px 12px;
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .finalizar-chat-btn:hover {
+        background-color: forestgreen; /* tom mais escuro no hover */
+        transform: scale(1.05); /* aumenta levemente o botão */
+    }
+
+
+
+/* Ajuste responsivo para imagens dentro das mensagens */
+@media (max-width: 768px) {
+    .message img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .message img {
+        max-width: 120px;
+        max-height: 120px;
+    }
+}

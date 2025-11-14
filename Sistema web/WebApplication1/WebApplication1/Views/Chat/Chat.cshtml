@@ -1,0 +1,326 @@
+﻿@{
+    // Remove o layout padrão. Essa página será exibida sem o _Layout.cshtml
+    Layout = null;
+
+    // Pega o nome do técnico vindo do ViewBag ou usa "Técnico"
+    var tecnico = ViewBag.Tecnico ?? "Técnico";
+
+    // Pega o nome do cliente vindo do ViewBag ou usa "Cliente"
+    var cliente = ViewBag.Cliente ?? "Cliente";
+
+    // ID do ticket para carregar mensagens e entrar no grupo do SignalR
+    var ticketId = ViewBag.TicketId ?? 0;
+
+    // Título exibido no topo da aba
+    var titulo = ViewBag.Titulo ?? "Chat";
+
+    // Papel atual (tecnico ou cliente). Força minúsculas.
+    var papelAtual = (ViewBag.Papel ?? "tecnico").ToString().ToLower();
+
+    // Primeira letra do nome do cliente (para exibir no ícone)
+    var clienteInicial = cliente.Trim().Substring(0, 1).ToUpper();
+
+    // Define se o chat está em modo leitura (não pode enviar mensagens)
+    var modoLeitura = ViewBag.ModoLeitura ?? false;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chat - @titulo</title>
+
+    <!-- CSS do chat -->
+    <link rel="stylesheet" href="~/css/chat-style.css" />
+
+    <!-- Ícones FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Container principal em tela inteira -->
+    <div class="chat-fullscreen">
+
+        <!-- Cabeçalho com ícone e nome do cliente -->
+        <div class="chat-header">
+            <div class="client-icon">@clienteInicial</div>
+            <div class="client-name">@cliente</div>
+        </div>
+
+        <!-- Área onde as mensagens aparecem -->
+        <div class="chat-messages" id="mensagens" style="position: relative; overflow-y: auto;">
+
+            <!-- Logo centralizada enquanto o chat está vazio -->
+            <img src="@Url.Content("~/imagem/Logo.png")"
+                 alt="Logo"
+                 id="logoChat"
+                 style="
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%, -50%);
+                    width:220px;
+                    height:auto;
+                    opacity:0.3;
+                    z-index:0;
+                    pointer-events:none;
+                    object-fit:contain;">
+        </div>
+
+        @if (!modoLeitura)
+        {
+            <!-- Área de digitação -->
+            <div class="chat-input">
+
+                <!-- Caixa de texto -->
+                <textarea id="mensagemInput" placeholder="Digite sua mensagem..."></textarea>
+
+                <!-- Botão de anexar arquivo -->
+                <label for="arquivoInput" class="attach-btn">
+                    <i class="fas fa-paperclip"></i>
+                </label>
+
+                <!-- Input real de arquivo escondido -->
+                <input type="file" id="arquivoInput" style="display:none" />
+
+                <!-- Botão de enviar -->
+                <button id="enviarBtn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        }
+        else
+        {
+            <!-- Quando o chat está encerrado -->
+            <div class="chat-info-bar">
+                <p style="text-align:center; color:#666; margin:10px 0;">
+                    🔒 Este chat está em modo visualização (não é possível enviar mensagens).
+                </p>
+            </div>
+        }
+    </div>
+
+    <!-- SignalR para comunicação em tempo real -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+
+    <!-- jQuery (usado para AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // Elementos da página
+            const mensagens = document.getElementById("mensagens");
+            const textarea = document.getElementById("mensagemInput");
+            const botao = document.getElementById("enviarBtn");
+            const arquivoInput = document.getElementById("arquivoInput");
+
+            // Variáveis do usuário
+            const ticketId = @ticketId;
+            const usuario = "@(papelAtual == "tecnico" ? tecnico : cliente)";
+            const papel = "@papelAtual";
+            const modoLeitura = @(modoLeitura.ToString().ToLower());
+
+            // Controla duplicação de mensagens
+            const mensagensRenderizadas = new Set();
+
+            /*
+             * Função para renderizar uma mensagem no HTML.
+             * Decide se é arquivo, imagem ou texto normal.
+             */
+            function criarMensagemHTML(mensagem, lado, hora, nomeOriginal = null) {
+                const msgDiv = document.createElement("div");
+                msgDiv.classList.add("message", lado);
+                msgDiv.style.position = "relative";
+                msgDiv.style.zIndex = "1";
+
+                // Mensagem do tipo arquivo
+                if (mensagem.startsWith("file:")) {
+                    const fileUrl = mensagem.replace("file:", "").trim();
+                    const ext = fileUrl.split('.').pop().toLowerCase();
+                    let conteudo = "";
+
+                    // Se for imagem → renderiza miniatura
+                    if (["jpg", "jpeg", "png", "gif", "bmp", "webp"].includes(ext)) {
+                        conteudo = `<img src="${fileUrl}" alt="arquivo" style="max-width:200px; border-radius:8px;">`;
+                    } else {
+                        // Se for arquivo qualquer → link para download
+                        const nomeAmigavel = nomeOriginal || decodeURIComponent(fileUrl.split('/').pop());
+                        const corLink = lado === "received" ? "#007bff" : "white";
+                        conteudo = `<a href="${fileUrl}" target="_blank" style="color:${corLink}; text-decoration:none;">
+                                        <i class="fas fa-file"></i> ${nomeAmigavel}
+                                    </a>`;
+                    }
+
+                    msgDiv.innerHTML = `<div class="msg-texto">${conteudo}</div>`;
+                } else {
+                    // Mensagem de texto normal
+                    msgDiv.innerHTML = `<div class="msg-texto">${mensagem}</div>`;
+                }
+
+                // Hora da mensagem
+                const horaDiv = document.createElement("div");
+                horaDiv.classList.add("msg-hora");
+                horaDiv.textContent = new Date(hora).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                horaDiv.style.fontSize = "11px";
+                horaDiv.style.marginTop = "2px";
+                horaDiv.style.color = "#888";
+                horaDiv.style.textAlign = lado === "sent" ? "right" : "left";
+
+                // Adiciona ao chat
+                mensagens.appendChild(msgDiv);
+                mensagens.appendChild(horaDiv);
+                mensagens.scrollTop = mensagens.scrollHeight;
+            }
+
+            /*
+             * Gera um ID seguro para não duplicar mensagens
+             */
+            function gerarIdSeguro(mensagem) {
+                if (mensagem.startsWith("file:")) {
+                    return mensagem.replace("file:", "").trim();
+                }
+                return mensagem.replace(/<[^>]*>/g, "").trim();
+            }
+
+            /*
+             * Carrega mensagens antigas via AJAX
+             */
+            function carregarMensagens() {
+                $.get(`/Chat/CarregarMensagens?ticketId=${ticketId}`, function (mensagensAntigas) {
+
+                    // Limpa todas mensagens atuais
+                    mensagens.querySelectorAll(".message, .msg-hora").forEach(el => el.remove());
+
+                    // Renderiza mensagens prévias
+                    mensagensAntigas.forEach(msg => {
+                        const msgId = gerarIdSeguro(msg.mensagem);
+                        if (mensagensRenderizadas.has(msgId)) return;
+                        mensagensRenderizadas.add(msgId);
+
+                        const lado = msg.papel === papel ? "sent" : "received";
+                        criarMensagemHTML(msg.mensagem, lado, msg.dataEnvio);
+                    });
+                });
+            }
+
+            /*
+             * Conexão com o SignalR
+             */
+            const connection = new signalR.HubConnectionBuilder()
+                .withUrl("/chatHub")
+                .build();
+
+            // Quando conectar
+            connection.start().then(() => {
+                console.log("✅ Conectado ao SignalR");
+
+                // Entra no grupo do ticket
+                connection.invoke("EntrarNoTicket", ticketId);
+
+                // Carrega mensagens antigas
+                carregarMensagens();
+
+            }).catch(err => console.error("❌ Erro SignalR:", err.toString()));
+
+            /*
+             * Quando receber mensagem em tempo real
+             */
+            connection.on("ReceberMensagem", (dados) => {
+                const { mensagem, papel: papelRemetente, data, nomeOriginal } = dados;
+                if (!mensagem || mensagem.trim() === "") return;
+
+                const hora = data || new Date().toISOString();
+                const msgId = gerarIdSeguro(mensagem);
+                if (mensagensRenderizadas.has(msgId)) return;
+                mensagensRenderizadas.add(msgId);
+
+                const lado = papelRemetente === papel ? "sent" : "received";
+                criarMensagemHTML(mensagem, lado, hora, nomeOriginal);
+            });
+
+            /*
+             * Quando o chat é encerrado pelo cliente
+             */
+            connection.on("ChatEncerrado", (dados) => {
+                console.log("🚪 Chat encerrado:", dados);
+                alert("✅ O cliente encerrou o atendimento. Esta janela será fechada.");
+                setTimeout(() => window.close(), 1500);
+            });
+
+            /*
+             * Envio de mensagens (se não estiver em modo leitura)
+             */
+            if (modoLeitura !== "true") {
+
+                // Clique do botão enviar
+                botao?.addEventListener("click", () => {
+                    const texto = textarea.value.trim();
+                    if (!texto) return;
+
+                    connection.invoke("EnviarMensagem", ticketId, usuario, texto, papel)
+                        .then(() => console.log("📤 Mensagem enviada:", texto))
+                        .catch(err => console.error("Erro ao enviar:", err.toString()));
+
+                    textarea.value = "";
+                    textarea.focus();
+                });
+
+                // Pressionar Enter para enviar
+                textarea?.addEventListener("keypress", e => {
+                    if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        botao.click();
+                    }
+                });
+
+                /*
+                 * Upload de arquivos
+                 */
+                arquivoInput?.addEventListener("change", async () => {
+                    const arquivo = arquivoInput.files[0];
+                    if (!arquivo) return;
+
+                    const formData = new FormData();
+                    formData.append("file", arquivo);
+                    formData.append("ticketId", ticketId);
+                    formData.append("usuario", usuario);
+                    formData.append("papel", papel);
+
+                    try {
+                        const response = await fetch("/Upload/Create", {
+                            method: "POST",
+                            body: formData
+                        });
+
+                        const result = await response.json();
+
+                        // Mostra arquivo direto no chat somente para o técnico
+                        if (result.success && result.fileUrl && papel === "tecnico") {
+
+                            console.log("✅ Arquivo enviado:", result.fileUrl);
+
+                            const mensagem = `file:${result.fileUrl}`;
+                            const hora = new Date().toISOString();
+                            const msgId = gerarIdSeguro(mensagem);
+
+                            if (!mensagensRenderizadas.has(msgId)) {
+                                mensagensRenderizadas.add(msgId);
+                                criarMensagemHTML(mensagem, "sent", hora, arquivo.name);
+                            }
+                        } else {
+                            console.error("❌ Erro no upload:", result.error);
+                        }
+
+                    } catch (err) {
+                        console.error("🔥 Erro upload:", err);
+                    }
+
+                    arquivoInput.value = "";
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

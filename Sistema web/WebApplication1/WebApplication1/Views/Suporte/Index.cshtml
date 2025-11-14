@@ -1,0 +1,175 @@
+﻿@{
+    Layout = null;
+
+    // ======================================================
+    // 🔹 Listas de Tickets (passadas pelo Controller)
+    // ======================================================
+    var abertos = Model as List<WebApplication1.Models.Ticket> ?? new List<WebApplication1.Models.Ticket>();
+    var andamento = ViewBag.Andamento as List<WebApplication1.Models.Ticket> ?? new List<WebApplication1.Models.Ticket>();
+    var fechados = ViewBag.Fechados as List<WebApplication1.Models.Ticket> ?? new List<WebApplication1.Models.Ticket>();
+
+    // ======================================================
+    // 🔹 Usuário logado (técnico)
+    // ======================================================
+    var usuario = ViewBag.UsuarioLogado ?? "Suporte";
+    var avatarInicial = usuario.Length >= 2 ? usuario.Substring(0, 2).ToUpper() : usuario.ToUpper();
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Suporte</title>
+
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="~/css/painel-suporte.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        /* Remove sublinhado de links com a classe btn */
+        .btn {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- =============================
+         🔹 SIDEBAR (Menu lateral)
+         ============================= -->
+    <aside class="sidebar">
+        <img src="~/imagem/Logo.png" alt="Logo" class="sidebar-logo">
+        <h2>Suporte</h2>
+        <p>Central de Chamados</p>
+
+        <nav>
+            <button onclick="mostrarSecao('abertos')">
+                Abertos: <span id="count-abertos">@abertos.Count</span>
+            </button>
+
+            <button onclick="mostrarSecao('andamento')">
+                Em Andamento: <span id="count-andamento">@andamento.Count</span>
+            </button>
+
+            <button onclick="mostrarSecao('fechados')">
+                Finalizados: <span id="count-fechados">@fechados.Count</span>
+            </button>
+        </nav>
+    </aside>
+
+    <!-- =============================
+         🔹 CONTEÚDO PRINCIPAL
+         ============================= -->
+    <main class="main">
+        <header>
+            <h1>Central de Chamados</h1>
+            <p>Bem-vindo, @usuario</p>
+        </header>
+
+        <div class="chamados-list">
+
+            @* =============================
+               🔸 FUNÇÃO AUXILIAR PARA RENDERIZAR TICKETS
+               ============================= *@
+            @{
+                void RenderTicket(WebApplication1.Models.Ticket ticket, string status)
+                {
+                    <div id="ticket-@ticket.Id" class="chamado-item chamado-card">
+                        <h3>@ticket.Title</h3>
+                        <p>@ticket.Description</p>
+
+                        <div class="chamado-footer">
+                            <span>👤 @(ticket.Criador?.Username ?? "Cliente")</span>
+                            <span>🛠️ @(ticket.Tecnico?.Nome ?? "Técnico")</span>
+                            <span>📅 @ticket.DataCriacao.ToString("dd/MM/yyyy HH:mm:ss")</span>
+                        </div>
+
+                        <div class="status-badge status-@status.ToLower()">
+                            @(status == "abertos" ? "Aberto" : status == "andamento" ? "Em Andamento" : "Finalizado")
+                        </div>
+
+                        @* Botões específicos por status *@
+                        @if (status == "abertos")
+                        {
+                            <button class="btn-atender" data-ticket-id="@ticket.Id" onclick="iniciarAtendimento(@ticket.Id)">
+                                🏁 Iniciar Atendimento
+                            </button>
+                        }
+                        else if (status == "andamento")
+                        {
+                            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                <a href="/Chat/AbrirChat?ticketId=@ticket.Id&modo=escrita" class="btn btn-reabrir">
+                                    💬 Reabrir Conversa
+                                </a>
+                                <button class="btn-finalizar" data-ticket-id="@ticket.Id">✅ Finalizar</button>
+                            </div>
+                        }
+                        else if (status == "fechados")
+                        {
+                            <a href="/Chat/AbrirChat?ticketId=@ticket.Id&modo=leitura" class="btn btn-visualizar">
+                                👁️ Visualizar Conversa
+                            </a>
+                        }
+                    </div>
+                }
+            }
+
+            @* =============================
+               🔸 TICKETS ABERTOS
+               ============================= *@
+            <div id="abertos-list" class="chamados-section">
+                @foreach (var ticket in abertos)
+                {
+                    RenderTicket(ticket, "abertos");
+                }
+            </div>
+
+            @* =============================
+               🔸 TICKETS EM ANDAMENTO
+               ============================= *@
+            <div id="andamento-list" class="chamados-section">
+                @foreach (var ticket in andamento)
+                {
+                    if (ticket.Id <= 0) continue;
+                    RenderTicket(ticket, "andamento");
+                }
+            </div>
+
+            @* =============================
+               🔸 TICKETS FINALIZADOS
+               ============================= *@
+            <div id="fechados-list" class="chamados-section">
+                @foreach (var ticket in fechados)
+                {
+                    if (ticket.Id <= 0) continue;
+                    RenderTicket(ticket, "fechados");
+                }
+            </div>
+
+        </div> <!-- ✅ FECHANDO chamados-list -->
+    </main>
+
+    <!-- =============================
+         🔹 Scripts
+         ============================= -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <script src="~/js/painel-suporte.js"></script>
+
+    <script>
+        // ==========================================================
+        // Função: alternar entre seções (Abertos / Andamento / Fechados)
+        // ==========================================================
+        function mostrarSecao(secao) {
+            document.querySelectorAll('.chamados-section').forEach(div => div.style.display = 'none');
+            document.getElementById(secao + '-list').style.display = 'block';
+        }
+
+        // Mostra "Abertos" ao carregar
+        mostrarSecao('abertos');
+    </script>
+</body>
+</html>

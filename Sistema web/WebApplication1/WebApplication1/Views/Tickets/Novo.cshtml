@@ -1,0 +1,148 @@
+﻿@{
+    ViewData["Title"] = "Novo Chamado";
+    Layout = null;
+
+    // 🔹 Tenta pegar o usuário da sessão ou do cookie
+    var username = Context.Session.GetString("Username")
+                   ?? Context.Request.Cookies["Username"];
+
+    // 🔹 Se não estiver logado, redireciona para o login
+    if (string.IsNullOrEmpty(username))
+    {
+        Context.Response.Redirect("/User/Login");
+    }
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>Novo Chamado - SuporteTech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/novoChamado.css" />
+</head>
+<body>
+
+    <div class="ticket-form">
+
+        <img src="/imagem/Logo.png" alt="Logo SuporteTech" class="logo-canto">
+
+        <h2 class="title-with-icon">
+            <i class="fas fa-clipboard"></i> Abrir Novo Chamado
+        </h2>
+
+        <!-- alertas -->
+        <div id="alertError" class="alert alert-error" style="display:none;"></div>
+        <div id="alertSuccess" class="alert alert-success" style="display:none;"></div>
+
+        <div class="form-group">
+            <label for="title"><i class="fas fa-pen"></i> Título do Problema</label>
+            <input type="text" id="title" placeholder="Ex: Sistema travando ao iniciar" />
+        </div>
+
+        <div class="form-group">
+            <label for="description"><i class="fas fa-align-left"></i> Descrição Detalhada</label>
+            <textarea id="description" placeholder="Explique o que está acontecendo..."></textarea>
+        </div>
+
+        <div class="botoes">
+            <button id="btnEnviar" type="button">
+                <i class="fas fa-paper-plane"></i> Enviar Chamado
+            </button>
+
+            <button id="btn-meus-chamados" type="button"
+                    onclick="window.location.href='@Url.Action("MeusChamados", "Tickets")'">
+                <i class="fas fa-clipboard-list"></i> Meus Chamados
+            </button>
+        </div>
+
+        <div id="loading" style="display:none;">
+            <i class="fas fa-spinner fa-spin"></i> Enviando seu chamado...
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const btnEnviar = document.getElementById("btnEnviar");
+            const title = document.getElementById("title");
+            const description = document.getElementById("description");
+            const loading = document.getElementById("loading");
+            const alertError = document.getElementById("alertError");
+            const alertSuccess = document.getElementById("alertSuccess");
+
+            // 🔹 Nome do usuário vindo da sessão ou cookie
+            const nomeUsuario = "@username";
+
+            btnEnviar.addEventListener("click", async () => {
+                // limpa mensagens
+                alertError.style.display = 'none';
+                alertSuccess.style.display = 'none';
+
+                const titulo = title.value.trim();
+                const descricao = description.value.trim();
+
+                if (!titulo || !descricao) {
+                    showError("Por favor, preencha o título e a descrição.");
+                    return;
+                }
+
+                if (descricao.length < 10) {
+                    showError("A descrição precisa ter pelo menos 10 caracteres.");
+                    return;
+                }
+
+                btnEnviar.disabled = true;
+                loading.style.display = "block";
+
+                try {
+                    // === Envio AJAX ===
+                    const response = await fetch("/Tickets/Novo", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Accept": "application/json"
+                        },
+                        body: JSON.stringify({
+                            title: titulo,
+                            description: descricao,
+                            criador: nomeUsuario
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        showSuccess("✅ Chamado enviado com sucesso! Técnico: " + result.tecnicoResponsavel);
+                        title.value = "";
+                        description.value = "";
+
+                        setTimeout(() => {
+                            window.location.href = result.redirectUrl || `/Chat/ChatCliente?ticketId=${result.ticketId}`;
+                        }, 300);
+                    } else {
+                        showError(result.error || "❌ Erro ao enviar chamado.");
+                    }
+                } catch (e) {
+                    showError("Erro de conexão com o servidor. Tente novamente.");
+                    console.error(e);
+                } finally {
+                    btnEnviar.disabled = false;
+                    loading.style.display = "none";
+                }
+            });
+
+            // funções auxiliares
+            function showError(msg) {
+                alertError.textContent = msg;
+                alertError.style.display = "block";
+            }
+
+            function showSuccess(msg) {
+                alertSuccess.textContent = msg;
+                alertSuccess.style.display = "block";
+            }
+        });
+    </script>
+
+</body>
+</html>

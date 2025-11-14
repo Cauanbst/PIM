@@ -1,0 +1,583 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\js\\painel-suporte.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\painel-suporte.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\views\\tickets\\novo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\tickets\\novo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\views\\tickets\\meuschamados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\tickets\\meuschamados.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\views\\tecnico\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\tecnico\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\views\\suporte\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\suporte\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\views\\chat\\chatclie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\chat\\chatclie.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\views\\chat\\chat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\views\\chat\\chat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\models\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\models\\mensagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\mensagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\models\\chatfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\models\\chatfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\ticketscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\controllers\\technicianscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\technicianscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\controllers\\suportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\suportecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\uploadcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\js\\chattle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\chattle.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\css\\chat-style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\chat-style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\css\\chat.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\chat.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\css\\painel-suporte.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\painel-suporte.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\css\\meus-chamados.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\meus-chamados.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\css\\novochamado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\novochamado.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\imagem\\logo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\imagem\\logo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|c:\\users\\cauan\\downloads\\webapplication1\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9C1DD123-E292-47E0-BEE1-BBB0311C68A0}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 400,
+          "SelectedChildIndex": 15,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TicketsController.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\TicketsController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\TicketsController.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\TicketsController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\TicketsController.cs",
+              "ViewState": "AgIAABwDAAAAAAAAAAAuwF8BAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T00:52:04.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\User\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\User\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\User\\Login.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\User\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-09T22:56:25.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Ticket.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\Ticket.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Ticket.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:14:46.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ChatFile.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\ChatFile.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\ChatFile.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\ChatFile.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\ChatFile.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T05:38:36.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\User.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\User.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\User.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T19:23:40.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TechniciansController.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\TechniciansController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\TechniciansController.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\TechniciansController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\TechniciansController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowAEAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:07:25.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "WebApplication1\\Hubs\\ChatHub.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAcwAIBAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T21:08:44.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\ChatController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:05:43.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "SuporteController.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\SuporteController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\SuporteController.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\SuporteController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\SuporteController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAA5wHcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:03:51.862Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UploadController.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\UploadController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UploadController.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\UploadController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UploadController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:05:40.101Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WebApplication1\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T01:02:11.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Program.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "WebApplication1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-14T21:24:09.873Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "WebApplication1\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-10T02:44:48.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Novo.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Tickets\\Novo.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Tickets\\Novo.cshtml",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Tickets\\Novo.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Tickets\\Novo.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-09T22:55:22.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "chattle.js",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\js\\chattle.js",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\chattle.js",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\js\\chattle.js",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\js\\chattle.js",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-14T21:59:19.713Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "painel-suporte.js",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\js\\painel-suporte.js",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\painel-suporte.js",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\js\\painel-suporte.js",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\js\\painel-suporte.js",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAwwI8AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-11T04:49:21.357Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Suporte\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Suporte\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Suporte\\Index.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Suporte\\Index.cshtml",
+              "ViewState": "AgIAABAAAAAAAAAAAAAwwK8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-10T01:13:58.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChatClie.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Chat\\ChatClie.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Chat\\ChatClie.cshtml",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Chat\\ChatClie.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Chat\\ChatClie.cshtml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAgwA8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T00:07:25.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MeusChamados.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Tickets\\MeusChamados.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Tickets\\MeusChamados.cshtml",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Tickets\\MeusChamados.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Tickets\\MeusChamados.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAwwK4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-14T23:27:56.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Mensagem.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\Mensagem.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Mensagem.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\Mensagem.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Mensagem.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAIwDgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T18:32:19.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "chat.css",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\chat.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\chat.css",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\chat.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\chat.css",
+              "ViewState": "AgIAABwBAAAAAAAAAAAIwDABAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-09T22:54:57.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "chat-style.css",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\chat-style.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\chat-style.css",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\chat-style.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\chat-style.css",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAswJ4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-09T22:55:04.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Chat.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Chat\\Chat.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Chat\\Chat.cshtml",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Chat\\Chat.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Chat\\Chat.cshtml",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwEYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-26T00:06:56.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "painel-suporte.css",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\painel-suporte.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\painel-suporte.css",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\painel-suporte.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\painel-suporte.css",
+              "ViewState": "AgIAAP4AAAAAAAAAAAAiwCMBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-11T20:41:24.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebApplication1\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-20T06:34:23.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Tecnico\\Login.cshtml",
+              "RelativeDocumentMoniker": "WebApplication1\\Views\\Tecnico\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Views\\Tecnico\\Login.cshtml",
+              "RelativeToolTip": "WebApplication1\\Views\\Tecnico\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-15T19:30:01.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Technician.cs",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\Technician.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Models\\Technician.cs",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\Models\\Technician.cs",
+              "RelativeToolTip": "WebApplication1\\Models\\Technician.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T05:38:37.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-10-15T19:29:40.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "meus-chamados.css",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\meus-chamados.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\meus-chamados.css",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\meus-chamados.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\meus-chamados.css",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAnwAsBAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-15T17:06:57.127Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "novoChamado.css",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\novoChamado.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\novoChamado.css",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\novoChamado.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\novoChamado.css",
+              "ViewState": "AgIAAKUAAAAAAAAAAAAAAK4AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-09T22:55:17.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Logo.png - PNG [500x500, 32 bits, PNG]",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\imagem\\Logo.png",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\imagem\\Logo.png",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\imagem\\Logo.png - PNG [500x500, 32 bits, PNG]",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\imagem\\Logo.png - PNG [500x500, 32 bits, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-10-20T22:53:42.323Z",
+              "EditorCaption": " - PNG [500x500, 32 bits, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Login.css",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\Login.css",
+              "RelativeDocumentMoniker": "WebApplication1\\wwwroot\\css\\Login.css",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\wwwroot\\css\\Login.css",
+              "RelativeToolTip": "WebApplication1\\wwwroot\\css\\Login.css",
+              "ViewState": "AgIAABMBAAAAAAAAAAAAAB8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-10-09T22:56:55.987Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApplication1\\appsettings.json",
+              "ToolTip": "C:\\Users\\Cauan\\Downloads\\WebApplication1\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "WebApplication1\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-20T06:34:13.565Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 122,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

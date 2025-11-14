@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ChatActivity">
+
+    <!-- 🔹 Cabeçalho -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:elevation="2dp">
+
+        <TextView
+            android:id="@+id/tecnicoInicial"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/circle_azul"
+            android:text="C"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:gravity="center"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tecnicoNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Cauan"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <!-- 🔹 Linha divisória -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0" />
+
+    <!-- 🔹 Área de chat com logo no centro -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF">
+
+        <!-- Logo central -->
+        <ImageView
+            android:id="@+id/logoCentro"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/logo"
+            android:layout_gravity="center"
+            android:alpha="0.20"
+            android:contentDescription="Logo" />
+
+        <!-- Scroll de mensagens -->
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="vertical"
+            android:contentDescription="Área de mensagens do chat">
+
+            <!-- Container para bolhas -->
+            <LinearLayout
+                android:id="@+id/chatLogContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- 🔹 Linha divisória -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0" />
+
+    <!-- 🔹 Campo de mensagem -->
+    <LinearLayout
+        android:id="@+id/layoutEnviarMensagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+        <!-- Campo de texto -->
+        <EditText
+            android:id="@+id/editMensagem"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:hint="Digite sua mensagem..."
+            android:background="@drawable/bg_mensagem"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="#000000"
+            android:textColorHint="#888888"
+            android:textSize="16sp"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:importantForAutofill="no"
+            android:autofillHints=""
+            tools:ignore="Autofill,HardcodedText" />
+
+        <!-- Botão de anexo -->
+        <ImageButton
+            android:id="@+id/btnAnexo"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_btn_anexo"
+            app:srcCompat="@drawable/ic_anexo"
+            app:tint="@android:color/white"
+            android:contentDescription="Anexar"
+            android:scaleType="centerInside"
+            android:padding="12dp" />
+
+        <!-- Botão de enviar -->
+        <ImageButton
+            android:id="@+id/btnEnviar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_btn_enviar"
+            app:srcCompat="@drawable/ic_enviar"
+            app:tint="@android:color/white"
+            android:contentDescription="Enviar"
+            android:scaleType="centerInside"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <!-- 🔹 Aviso (modo de visualização) -->
+    <TextView
+        android:id="@+id/txtAvisoVisualizacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#444444"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="💬 Este chat está em modo de visualização."
+        android:padding="8dp" />
+
+</LinearLayout>

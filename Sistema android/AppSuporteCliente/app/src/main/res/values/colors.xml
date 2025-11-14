@@ -1,0 +1,15 @@
+<resources>
+    <!-- Cores principais do app -->
+    <color name="azulPrincipal">#2196F3</color> <!-- Azul padrão bonito -->
+    <color name="branco">#FFFFFF</color>
+    <color name="preto">#000000</color>
+    <color name="cinzaClaro">#E0E0E0</color>
+    <color name="cinzaEscuro">#888888</color>
+    <color name="teal_700">#018786</color>
+    <color name="blue_primary">#1976D2</color>
+
+    <!-- Outras cores do tema (opcional, para consistência) -->
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#64B5F6</color>
+</resources>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/bg_card"
+    android:layout_marginBottom="12dp"
+    android:elevation="4dp">
+
+    <!-- Linha superior: ID e Status -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#123"
+            android:textStyle="bold"
+            android:textColor="#333"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aberto"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:background="@drawable/bg_status_aberto"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <!-- Título do chamado -->
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Título do chamado"
+        android:textColor="#222"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Descrição -->
+    <TextView
+        android:id="@+id/txtDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Descrição detalhada do chamado"
+        android:textColor="#555"
+        android:textSize="14sp"
+        android:layout_marginTop="4dp"
+        tools:ignore="HardcodedText" />
+
+    <!-- Técnico e data -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/txtTecnico"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👷 Técnico: João"
+            android:textColor="#666"
+            android:textSize="13sp"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/txtData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📅 23/10/2025"
+            android:textColor="#666"
+            android:textSize="13sp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <!-- 🔹 Botão para reabrir ticket -->
+    <Button
+        android:id="@+id/btnReabrir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💬 Reabrir Ticket"
+        android:backgroundTint="@color/teal_700"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        tools:ignore="HardcodedText" />
+
+    <!-- 🔹 Botão bonito igual ao de reabrir -->
+    <Button
+        android:id="@+id/btnVisualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="💬 Visualizar Conversa"
+        android:backgroundTint="#1976D2"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        tools:ignore="HardcodedText" />
+
+
+
+</LinearLayout>

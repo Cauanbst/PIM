@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Gradiente diagonal parecido com 135deg do CSS -->
+    <gradient
+        android:startColor="#2563EB"
+        android:endColor="#1E3A8A"
+        android:angle="45"/> <!-- 45° é a diagonal no Android -->
+
+    <!-- Bordas arredondadas -->
+    <corners android:radius="12dp" />
+</shape>

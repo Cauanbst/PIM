@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="28dp"
+    android:background="#F4F6F9"
+    tools:context=".ChamadoActivity">
+
+    <!-- LOGO -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:src="@drawable/logo"
+        android:layout_marginBottom="12dp"
+        android:contentDescription="@string/app_name" />
+
+    <!-- TÍTULO -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Abrir Chamado"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#1E1E1E"
+        android:gravity="center"
+        android:layout_marginBottom="18dp" />
+
+    <!-- CAMPO TÍTULO -->
+    <EditText
+        android:id="@+id/editTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título do chamado"
+        android:inputType="text"
+        android:layout_marginBottom="12dp"
+        android:padding="14dp"
+        android:textColor="#222222"
+        android:textColorHint="#555555"
+        android:background="@drawable/edittext_background" />
+
+    <!-- CAMPO DESCRIÇÃO -->
+    <EditText
+        android:id="@+id/editDescricao"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:hint="Descrição do problema"
+        android:inputType="textMultiLine"
+        android:gravity="top"
+        android:padding="14dp"
+        android:textColor="#222222"
+        android:textColorHint="#555555"
+        android:background="@drawable/edittext_background"
+        android:layout_marginBottom="22dp" />
+
+    <!-- BOTÃO ENVIAR -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEnviar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="🛫 Enviar Chamado"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:paddingVertical="16dp"
+        android:background="@drawable/btn_login_gradiente"
+        android:stateListAnimator="@null"
+        android:elevation="6dp"
+        android:layout_marginBottom="12dp"/>
+
+    <!-- BOTÃO MEUS CHAMADOS -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnMeusChamados"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="📋 Meus Chamados"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:paddingVertical="16dp"
+        android:background="@drawable/btn_login_gradiente"
+        android:stateListAnimator="@null"
+        android:elevation="6dp"/>
+</LinearLayout>

@@ -1,0 +1,35 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">AppSuporteCliente</string>
+
+    <!-- Login -->
+    <string name="login_loading" tools:ignore="TypographyEllipsis">Entrando...</string>
+    <string name="login_empty_fields">Preencha todos os campos</string>
+    <string name="login_error_server">Erro ao se comunicar com o servidor</string>
+    <string name="login_error_failure">Falha: %1$s</string>
+    <string name="login_titulo">Login do Cliente</string>
+    <string name="login_hint_email">E-mail</string>
+    <string name="login_hint_senha">Senha</string>
+    <string name="login_btn_entrar">Entrar</string>
+    <string name="Android_nome">Bem-vindo(a)!</string>
+    <string name="Email"> Email </string>
+    <string name="Senha"> Senha </string>
+    <!-- ChatActivity -->
+    <string name="chat_dados_invalidos">Dados do ticket inválidos</string>
+    <string name="chat_encerrado">O atendimento foi encerrado pelo técnico</string>
+    <string name="chat_erro_conexao">Falha ao conectar: %1$s</string>
+    <string name="chat_hub_url">http://192.168.1.9:5290/chatHub</string>
+
+    <!-- ChamadoActivity -->
+    <string name="chamado_enviando" tools:ignore="TypographyEllipsis">Enviando chamado...</string>
+    <string name="chamado_campos_vazios">Preencha todos os campos!</string>
+    <string name="chamado_usuario_desconhecido">Usuário Desconhecido</string>
+    <string name="chamado_sucesso">Chamado enviado com sucesso!</string>
+    <string name="chamado_erro_envio">Erro ao enviar o chamado!</string>
+    <string name="chamado_erro_conexao">Falha na conexão: %1$s</string>
+    <string name="chamado_api_url">http://192.168.1.9:5290/</string>
+
+    <!-- Imagem -->
+    <string name="imagem_recebida">Imagem recebida</string>
+    <string name="autorizo_o_uso_dos_meus_dados_apenas_para_registro_e_gerenciamento_de_tickets">Autorizo o uso dos meus dados apenas para registro e gerenciamento de tickets.</string>
+    <string name="entrar">Entrar</string>
+</resources>

@@ -1,0 +1,235 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Pim4\\ChamadosAdmin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\dao\\ticketdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\dao\\ticketdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|c:\\pim4\\chamadosadmin\\chamadosadmin\\dao\\tecnicodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\dao\\tecnicodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|c:\\pim4\\chamadosadmin\\chamadosadmin\\dao\\admindao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\dao\\admindao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|c:\\pim4\\chamadosadmin\\chamadosadmin\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\controllers\\tecnicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\controllers\\tecnicocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\models\\tecnico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\models\\tecnico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\utils\\geradorpdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\utils\\geradorpdf.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|C:\\Pim4\\ChamadosAdmin\\chamadosadmin\\utils\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E934F9C-2354-48D8-8B5A-37CB86671011}|ChamadosAdmin\\ChamadosAdmin.csproj|solutionrelative:chamadosadmin\\utils\\conexao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TecnicoDAO.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\DAO\\TecnicoDAO.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\DAO\\TecnicoDAO.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\DAO\\TecnicoDAO.cs",
+              "RelativeToolTip": "ChamadosAdmin\\DAO\\TecnicoDAO.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T02:40:10.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminDAO.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\DAO\\AdminDAO.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\DAO\\AdminDAO.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\DAO\\AdminDAO.cs",
+              "RelativeToolTip": "ChamadosAdmin\\DAO\\AdminDAO.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-05T02:40:07.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TicketDAO.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\DAO\\TicketDAO.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\DAO\\TicketDAO.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\DAO\\TicketDAO.cs",
+              "RelativeToolTip": "ChamadosAdmin\\DAO\\TicketDAO.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAYwGAAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T21:12:00.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwDAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:37:40.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:35:54.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TecnicoController.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\TecnicoController.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Controllers\\TecnicoController.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\TecnicoController.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Controllers\\TecnicoController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwC4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:32:21.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TicketController.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\TicketController.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Controllers\\TicketController.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Controllers\\TicketController.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Controllers\\TicketController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:21:50.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Ticket.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Models\\Ticket.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Models\\Ticket.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Models\\Ticket.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Models\\Ticket.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:14:48.043Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Tecnico.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Models\\Tecnico.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Models\\Tecnico.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Models\\Tecnico.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Models\\Tecnico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:14:41.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Models\\Admin.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Models\\Admin.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Models\\Admin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T20:10:20.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Program.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Program.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Program.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:10:39.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GeradorPDF.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Utils\\GeradorPDF.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Utils\\GeradorPDF.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Utils\\GeradorPDF.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Utils\\GeradorPDF.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:09:18.558Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Conexao.cs",
+              "DocumentMoniker": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Utils\\Conexao.cs",
+              "RelativeDocumentMoniker": "ChamadosAdmin\\Utils\\Conexao.cs",
+              "ToolTip": "C:\\Pim4\\ChamadosAdmin\\ChamadosAdmin\\Utils\\Conexao.cs",
+              "RelativeToolTip": "ChamadosAdmin\\Utils\\Conexao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:09:09.104Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

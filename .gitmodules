@@ -1,0 +1,3 @@
+[submodule "Sistema desktop/ChamadosAdmin"]
+	path = Sistema desktop/ChamadosAdmin
+	url = https://github.com/Cauanbst/ChamadosAdmin.git
